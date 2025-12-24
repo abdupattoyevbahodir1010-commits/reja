@@ -1,5 +1,6 @@
-console.log("server boshlanishi")
+console.log(" web server boshlanish")
 const express=require("express");
+const res=require("express/lib/response")
 const http=require("http")
 const app=express();
 
@@ -15,17 +16,19 @@ app.set("views","views");
 app.set("view engine","ejs");
 
 //4
-app.get("/salom", function(req,res) {
-    res.end(`<h1 style="background:red">Hello world by Bahodir</h1>`)
+app.post("/creeate_item",(req,res)=>{
+    console.log(req.body);
+    res.json({test: "qabul qilindi"})
 });
-app.get("/sovga", function(req,res) {
-    res.end(`<h1 style="background:orange">sovgalar bolimiga xush kelibsiz</h1>`)
-});
+app.get("/",function(req,res){
+    res.render("harid")
+})
+
 const server=http.createServer(app);
 
 let PORT=3000;
 server.listen(PORT,function(){
-    console.log("server ishga tushdi")
+    console.log(`server ishga tushdi,${PORT}`)
 })
 
 
