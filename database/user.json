@@ -1,0 +1,20 @@
+{
+    "name":"stave",
+    "profession":"Software Engineer",
+    "age":20,
+    "residance":"S.Korea",
+    "adress":"S.Korea,Iksan",
+    "languages":["Uzbek","korea","English"],
+    "skills":["Html","Css","Js","NodeJs","Python"],
+    "extra_skills":["Bootstrap,Matreialize","Styling Sass","Django,Flask","Git Knowledge"],
+    "work_place":"IT Company",
+    "service_desc":"Amet minim mollit non deserunt ullamco est sit allqua dolor do amet sint.Velit official consequat",
+    "about_me":"Lorem ipsum dolor sit amet,consectetur adipiscing elit.Et,volutpat fuegiat placerat lobortis.Natoqe",
+    "city":"Denau",
+    "title":["Flower","Seedlings","Gardner","old","New"],
+    "flower_desc":["What is a flower?","What is a Seedling?","Who is Garden?"],
+    "flower_name":["Tulip ","Daffodil","Poppy","Sunflower","bluebell","rose","Snowdrop","Cherry","blossom"],
+    "flower_price":["15$","25","12$","20$","35$","30$","22$","19$","9$"],
+    "famous_words":["World is beautiful with flowers"],
+    "famous_name":["Stave Jobs"]
+}
