@@ -31,7 +31,7 @@ app.post("/creeate_item",(req,res)=>{
     res.json({test: "qabul qilindi"})
 });
 app.get("/",function(req,res){
-    res.render("harid")
+    res.render("reja")
 });
 
 app.get("/author",(req,res)=>{
@@ -42,7 +42,7 @@ const server=http.createServer(app);
 
 let PORT=3000;
 server.listen(PORT,function(){
-    console.log(`server ishga tushdi,${PORT}`)
+    console.log(`server ishga tushdi:${PORT},http://localhost:${PORT}`)
 })
 
 
