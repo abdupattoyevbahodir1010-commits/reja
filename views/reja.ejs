@@ -29,23 +29,51 @@
            
       </style>
   </head>
-  <body style="background-color:#b8bbd1;">
-    <h1 style="text-align: center;">Reja va Maqsadlar</h1>
+  <body style="background-color:#cccdc3;">
+   <div class="container">
+     <h1 style="text-align: center;">Reja va Maqsadlar</h1>
+        <div class="jumbotron p-3 shadow-sm">
+          <form  action="/create_item" method="post" id="create-form">
+            <div class="d-flex align-items-center">
+              <input
+                  id="create-field"
+                  name="reja"
+                  autofocus
+                  autocomplete="off"
+                  class="form-control mr-3"
+                  type="text"
+                  style="flex:1"
+               >
+               <button class="btn btn-primary" style="border-radius:20px">
+                Yangi Reja Qoshish
+               </button>
+            </div>
+            </form>
+           </div>
+           <!-- <%=items[0].reja%> -->
+           <ul id="item-list" class="list-group ph-5">
+            <%items.map(function(item){%>
+            <li
+              class="list-group-item list-group-item-info d-flex align-items-center justify-content-between"
+            >
+            <span class="item-text"><%=item.reja%></span>
+            <div>
+              <button class="edit-me btn btn-secondary btn-sm mr-1" data-id="<%=item._id%>">
+                O'zgartirish
+              </button>
+              <button class="delete-me btn btn-danger btn-sm" data-id="<%=item._id%> ">O'chirish</button>
+             
+            </div>
+            
+            </li>
+            <%})%>
+           </ul>
+        <button class="btn btn-primary" style="border-radius: 20px;" id="clean-all">
+          Hamma Rejalarni O'chirish
+
+        </button>
         
-          <form action="/creeate_item" method="post">
-            <div class="form-wrap">
-          <input type="text" name="item"  autofocus autocomplete="off">
-          <button>Yangi Reja Qoshish</button>
-          </div>
-          <div class="button" style="margin-left: 300px;">
-            <button style=" border-radius: 20px;border: 1px solid black; margin-top: 20px; line-height: 40px;">
-              Hamma Rejalarni O'chirish
-            </button>
-          </div>
-          
-          </form>
-          
-        
+   </div>
   
   </body>
 </html>
