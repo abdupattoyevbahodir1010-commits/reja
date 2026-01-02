@@ -20,7 +20,9 @@ document.getElementById("create-form")
 .addEventListener("submit",function(e){
     e.preventDefault();
 
-    axios.post("/create_item",{reja:createField.value}).then(response=>{
+    axios
+    .post("/create_item",{reja:createField.value})
+    .then(response=>{
         document.getElementById("item-list")
         .insertAdjacentHTML("beforeend",itemTemplate(response.data));
         createField.value="";
@@ -39,7 +41,7 @@ document.addEventListener("click",function(e){
     if(e.target.classList.contains("delete-me")){
         if(confirm("Aniq o'chirmoqchimisiz?")){
             axios
-            .post("/delete_item",{id:e.target.getAttribute("data-id")})
+            .post("/delete-item",{ id: e.target.getAttribute("data-id")})
             .then(response=>{
                 console.log(response.data);
                 e.target.parentElement.parentElement.remove();
