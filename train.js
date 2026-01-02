@@ -167,6 +167,40 @@
 // console.log(countDigit('sjdhhk37373ydgu29sh'));
 
 
+//TASK_C
+const moment=require("moment");
+const moment1=moment().format("hh:mm") 
+
+class shop{
+    constructor(non,lagmon,cola){
+        this.non=non;
+        this.lagmon=lagmon;
+        this.cola=cola;
+
+    }
+    Qoldiq(){
+        console.log(` Hozir :${moment1} da ${this.non} ta non ,${this.lagmon} ta lag'mon, ${this.cola} ta cola mavjud!`)
+    }
+    Sotish(minus){
+        this.non-=minus;
+        this.lagmon-=minus;
+        this.cola-=minus;
+
+        console.log(`Hozir : ${moment1} da ${this.non} ta non,${this.lagmon} ta lagmon,${this.cola} ta cola mavjud!`)
+
+    }
+    Qabul(pilus){
+        this.non+=pilus;
+        this.lagmon+=pilus;
+        this.cola+=pilus;
+        console.log(`Hozir: ${moment1} da  ${this.non} ta non,${this.lagmon} ta lagmon,${this.cola} ta cola mavjud!`)
+    }
+}
+const new_shop=new shop(4,7,9);
+new_shop.Qoldiq();
+new_shop.Sotish(1,1,1)
+
+
 
 
 
