@@ -1,6 +1,5 @@
 console.log(" web server boshlanish")
 const express=require("express");
-const res=require("express/lib/response")
 const db = require("./server") .db()
 
 const app=express();
@@ -39,17 +38,11 @@ app.set("view engine","ejs");
 //4 Routing code
 app.post("/create_item",(req,res)=>{
     console.log(req.body);
-    res.end("succed")
+    
     
     const new_reja=req.body.reja;
     db.collection("plans").insertOne({reja:new_reja},(err,data)=>{
-        if(err){
-            console.log(err);
-            res.end("something went wrong")
-        }else{
-            console.log("user entered /create_tem")
-            res.end("successfully added")
-        }
+      res.json(data.ops[0])
     })
 });
 app.get("/",function(req,res){

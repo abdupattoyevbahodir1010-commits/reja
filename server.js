@@ -5,10 +5,10 @@ const mongodb=require('mongodb')
 let db;
 const connectionString="mongodb+srv://bahodir177:H0ShrOXgwkNNyEzC@cluster0.cszxotm.mongodb.net/Reja?appName=Cluster0";
 
-mongodb.connect(connectionString,{
+mongodb.connect(connectionString,/*{
     useNewUrlParser:true,
     useUnifiedTopolgy:true,
-},(err,client)=>{
+},*/(err,client)=>{
     if(err) console.log("ERROR on connection MongoDB");
     else{
         console.log("MongoDB connection succed")
