@@ -46,17 +46,39 @@ app.post("/create_item",(req,res)=>{
       res.json(data.ops[0])
     })
 });
-
 app.post("/delete-item",(req,res)=>{
+    console.log("frontenddan backentga ketdi")
     const id=req.body.id;
-    db.collection("plans").deleteOne(
-        {_id:new mongodb.ObjectId(id) },
-        function(err,data){
-            res.json({state:"succedd"})
-        }
-    )
+    console.log(id)
+    console.log("backenddan databasega keldi");
+    db.collection("plans").deleteOne({_id:new mongodb.ObjectId(id)},
+    console.log("databasedan backendga keldi"),
+    function(err,data){
+        res.json({state:"succed"})
+    }
+)
 
 })
+app.post("/edit-item",(req,res)=>{
+    const data=req.body
+    console.log(data)
+    db.collection("plans").findOneAndUpdate({_id:new mongodb.ObjectId(data.id)},
+    { $set: {reja: data.new_input} },
+    function(err,data){
+        res.json({state:"succed"})
+
+    }
+)
+});
+app.post("/delete-all",(req,res)=>{
+    if(req.body.delete_all){
+        db.collection("plans").deleteMany(function(){
+            res.json({state:"Hamma rejalar o'chdi!"})
+        })
+    }
+    
+})
+
 app.get("/",function(req,res){
     db.collection("plans")
     .find()
