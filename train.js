@@ -1,6 +1,8 @@
 
 // A-TASK:
 
+const { toArray } = require("mongodb/lib/operations/cursor_ops")
+
 // function task(a,b){
 //   let result=0;
 //   for(let i=0;i<b.length;i++){
@@ -203,7 +205,11 @@
 
 
 //TASK_D
-
+function checkContent(a,b){
+    if(a.length!==b.length ) return false;
+    return a.split('').sort().join('')=== b.split('').sort().join('');
+}
+console.log(checkContent("mitgroup","gmitprou"))
 
 
 
