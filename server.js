@@ -16,7 +16,7 @@ mongodb.connect(connectionString,/*{
 
         const app=require('./app')
         const server=http.createServer(app);
-        let PORT=3000;
+        let PORT=5007;
 server.listen(PORT,function(){
     console.log(`server ishga tushdi:${PORT},http://localhost:${PORT}`)
 })

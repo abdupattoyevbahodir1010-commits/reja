@@ -77,14 +77,14 @@ document.addEventListener("click",function(e){
     }
 })
 document.getElementById("clean-all").addEventListener("click",function(){
-    axios.post("/delete-all",{delete_all:true})
-    .then((respose)=>{
-        alert(respose.data.state);
-        document.location.reload();
-        
-    })
-})
+    axios.post("/delete-all",{delete_all:ture}).then(response=>{
+        alert(response.body.state);
+        document.location.reload()
+    }).catch(err=>{
+        console.log("Itlimos qaytadan xarakat qilib ko'ring!")
 
+    }) 
+})
 
       
     
