@@ -205,11 +205,19 @@ const { toArray } = require("mongodb/lib/operations/cursor_ops")
 
 
 //TASK_D
-function checkContent(a,b){
-    if(a.length!==b.length ) return false;
-    return a.split('').sort().join('')=== b.split('').sort().join('');
+// function checkContent(a,b){
+//     if(a.length!==b.length ) return false;
+//     return a.split('').sort().join('')=== b.split('').sort().join('');
+// }
+// console.log(checkContent("mitgroup","gmitprou"))
+
+//TASK-E
+function getReverse(a){
+    return a.split('').reverse().join('');
+
+
 }
-console.log(checkContent("mitgroup","gmitprou"))
+console.log(getReverse("string"));
 
 
 
