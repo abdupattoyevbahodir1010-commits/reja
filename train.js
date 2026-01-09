@@ -212,12 +212,32 @@ const { toArray } = require("mongodb/lib/operations/cursor_ops")
 // console.log(checkContent("mitgroup","gmitprou"))
 
 //TASK-E
-function getReverse(a){
-    return a.split('').reverse().join('');
+// function getReverse(a){
+//     return a.split('').reverse().join('');
 
 
+// }
+// console.log(getReverse("string"));
+
+//TASK-F
+function findDoublers(a){
+    return a.split("").some((value,index,arr)=>{
+        
+       return arr.indexOf(value)!==index
+        
+        
+
+    })
 }
-console.log(getReverse("string"));
+console.log(findDoublers("hello"))
+
+    
+
+
+    
+    
+
+
 
 
 
